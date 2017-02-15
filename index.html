@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>broken flip animation by downsampling</title>
+    <style>
+      canvas {
+        border: 1px solid #999;
+      }
+
+      p {
+        margin: 0.5em 0;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="device-size">device sizes...</p>
+
+    <div>
+      <canvas id="canvas1" width="768" height="432" style="width: 384px; height: 216px;"></canvas>
+      <br>
+      <input id="start1" type="button" value="start">
+      <input id="stop1" type="button" value="stop">
+      <a href="./images/768x432_63times_vertical.jpg">raw image</a>
+      <p>768x432 * 63 (vertical) / 12fps</p>
+      <p id="data1">image data...</p>
+      <img id="image1" src="./images/768x432_63times_vertical.jpg" style="display: none;">
+    </div>
+
+    <div>
+      <canvas id="canvas2" width="768" height="432" style="width: 384px; height: 216px;"></canvas>
+      <br>
+      <input id="start2" type="button" value="start">
+      <input id="stop2" type="button" value="stop">
+      <a href="./images/768x432_63times_tile.jpg">raw image</a>
+      <p>768x432 * 63 (tile) / 12fps</p>
+      <p id="data2">image data...</p>
+      <img id="image2" src="./images/768x432_63times_tile.jpg" style="display: none;">
+    </div>
+
+    <div>
+      <canvas id="canvas3" width="768" height="432" style="width: 384px; height: 216px;"></canvas>
+      <br>
+      <input id="start3" type="button" value="start">
+      <input id="stop3" type="button" value="stop">
+      <a href="./images/768x432_32times_vertical_1.jpg">raw image1</a>
+      <a href="./images/768x432_32times_vertical_2.jpg">raw image2</a>
+      <p>768x432 * 64 (vertical * 2) / 12fps</p>
+      <p id="data3_1">image data...</p>
+      <p id="data3_2">image data...</p>
+      <img id="image3_1" src="./images/768x432_32times_vertical_1.jpg" style="display: none;">
+      <img id="image3_2" src="./images/768x432_32times_vertical_2.jpg" style="display: none;">
+    </div>
+
+    <div>
+      <canvas id="canvas4" width="768" height="432" style="width: 384px; height: 216px;"></canvas>
+      <br>
+      <input id="start4" type="button" value="start">
+      <input id="stop4" type="button" value="stop">
+      <a href="./images/768x432_63times_vertical.jpg">raw image</a>
+      <p>768x432 * 63 (vertical, from offscreen canvas) / 12fps</p>
+      <p id="data4">image data...</p>
+      <img id="image4" src="./images/768x432_63times_vertical.jpg" style="display: none;">
+    </div>
+
+    <script src="es6-promise.auto.min.js"></script>
+    <script src="AnimationFrame.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
